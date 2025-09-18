@@ -33,7 +33,7 @@ app.listen(port, async () => {
 
 const bot = new Telegraf(BOT_TOKEN);
 
-const web_link = "http://taskoriabot.com/";
+const web_link = "https://taskoriabot.unaux.com/";
 const community_link = "https://t.me/ultimatekupo";
 
 bot.start(async (ctx) => {
