@@ -33,7 +33,7 @@ app.listen(port, async () => {
 
 const bot = new Telegraf(BOT_TOKEN);
 
-const web_link = "https://taskoriabot.unaux.com/";
+const web_link = "http://taskoriabot.com/";
 const community_link = "https://t.me/ultimatekupo";
 
 bot.start(async (ctx) => {
@@ -47,7 +47,7 @@ bot.start(async (ctx) => {
         await ctx.replyWithPhoto(
             { source: 'public/like.jpg' }, // or provide a URL if it's hosted online
             {
-                caption: `*Hey, ${userName}! Welcome to NewCats!*\nHow cool is your Cat?\nGot friends, relatives, co-workers?\nBring them all into the game now.\nMore buddies, more coins.`,
+                caption: `*Hey, ${userName}! Welcome to Taskoria!*\nHow strong is your SHIB army?\nRally your friends, Fams,And fellow holders\nThe bigger your crew,the more SHIB rewards you stack.\nMore buddies, more coins.`,
                 parse_mode: 'Markdown', // Ensure markdown is used in the caption
                 reply_markup: {
                     inline_keyboard: [
