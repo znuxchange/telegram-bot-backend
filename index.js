@@ -33,7 +33,7 @@ app.listen(port, async () => {
 
 const bot = new Telegraf(BOT_TOKEN);
 
-const web_link = "https://taskoriabot.unaux.com/";
+const web_link = "https://taskoriabot.com";
 const community_link = "https://t.me/taskoriaann";
 
 bot.start(async (ctx) => {
