@@ -81,11 +81,11 @@ bot.start(async (ctx) => {
         await ctx.replyWithPhoto(
             { source: 'public/like.jpg' },
             {
-                caption: `*Hey, ${userName}! Welcome to NewCats!*\nHow cool is your Cat?\nGot friends, relatives, co-workers?\nBring them all into the game now.\nMore buddies, more coins.`,
+                caption: `*Hey, ${userName}! Welcome to Taskoria!*\nHow strong is your SHIB army🪖?\nOnboard Your friends, relatives, holder's?\nYour All-in-One Earning Hub 🔥 Complete simple tasks, surveys, games, PTC ads, shortlinks, and offerwall.`,
                 parse_mode: 'Markdown',
                 reply_markup: {
                     inline_keyboard: [
-                        [{ text: "✨Start now!✨", web_app: { url: urlSent } }],
+                        [{ text: "🐶Start now🐶", web_app: { url: urlSent } }],
                         [{ text: "👥Join Community👥", url: community_link }]
                     ],
                 },
