@@ -4,15 +4,6 @@ const { Telegraf, Markup } = require("telegraf");
 const express = require('express');
 const bodyParser = require("body-parser");
 const axios = require("axios");
-const admin = require("firebase-admin");
-
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
-
-const db = admin.firestore();
 
 const app = express();
 const port = process.env.PORT || 4040;
@@ -41,7 +32,8 @@ app.listen(port, async () => {
 });
 
 const bot = new Telegraf(BOT_TOKEN);
-const web_link = "https://taskoriabot.com";
+
+const web_link = "https://taskoriabot.com/";
 const community_link = "https://t.me/taskoriaann";
 
 bot.start(async (ctx) => {
@@ -50,39 +42,13 @@ bot.start(async (ctx) => {
     const user = ctx.message.from;
     const userName = user.username ? `@${user.username}` : user.first_name;
 
-    const userDocRef = db.collection('telegramUsers').doc(user.id.toString());
-
     try {
-        // Create or get the user's document
-        await userDocRef.set({
-            id: user.id.toString(),
-            username: user.username,
-            first_name: user.first_name,
-            last_name: user.last_name || null,
-            joinDate: admin.firestore.FieldValue.serverTimestamp(),
-        }, { merge: true });
-
-        // Check for a referral payload
-        if (startPayload && startPayload.startsWith('r')) {
-            const referrerId = startPayload.substring(1);
-            const referrerRef = db.collection('telegramUsers').doc(referrerId);
-            
-            // Check if the referrer exists to avoid errors
-            const referrerDoc = await referrerRef.get();
-            if (referrerDoc.exists) {
-                // Atomically increment the referrer's count
-                await referrerRef.update({
-                    referralsCount: admin.firestore.FieldValue.increment(1),
-                });
-                console.log(`Successfully incremented referral count for user: ${referrerId}`);
-            }
-        }
-
+        // Send the image with a caption
         await ctx.replyWithPhoto(
-            { source: 'public/like.jpg' },
+            { source: 'public/like.jpg' }, // or provide a URL if it's hosted online
             {
                 caption: `*Hey, ${userName}! Welcome to Taskoria!*\nHow strong is your SHIB army🪖?,Onboard Your friends, relatives, holder's?\nYour All-in-One Earning Hub 🔥 Complete simple tasks, surveys, games, PTC ads, shortlinks, and offerwall.`,
-                parse_mode: 'Markdown',
+                parse_mode: 'Markdown', // Ensure markdown is used in the caption
                 reply_markup: {
                     inline_keyboard: [
                         [{ text: "🐶Start now🐶", web_app: { url: urlSent } }],
