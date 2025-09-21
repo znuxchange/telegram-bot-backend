@@ -1,5 +1,6 @@
-import express from "express";
-import admin from "firebase-admin";
+const express = require("express");
+const admin = require("firebase-admin");
+require("dotenv").config();
 const app = express();
 
 // Parse service account from env
