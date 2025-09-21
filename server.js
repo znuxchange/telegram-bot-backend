@@ -1,6 +1,7 @@
-import express from "express";
-import admin from "firebase-admin";
-import crypto from "crypto";
+const express = require("express");
+const admin = require("firebase-admin");
+const crypto = require("crypto");
+require("dotenv").config();
 
 const app = express();
 
