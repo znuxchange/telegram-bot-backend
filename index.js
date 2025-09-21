@@ -4,6 +4,7 @@ const { Telegraf, Markup } = require("telegraf");
 const express = require('express');
 const bodyParser = require("body-parser");
 const axios = require("axios");
+const admin = require("firebase-admin");
 
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
