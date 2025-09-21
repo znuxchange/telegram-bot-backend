@@ -111,14 +111,3 @@ app.get("/", (req, res) => {
 app.get('/webhook', (req, res) => {
     res.send('Hey, Bot is awake!');
 });
-    bot.handleUpdate(req.body);
-    res.status(200).send('Received Telegram webhook');
-});
-
-app.get("/", (req, res) => {
-    res.send("Hello, I am working fine.");
-});
-
-app.get('/webhook', (req, res) => {
-    res.send('Hey, Bot is awake!');
-});
