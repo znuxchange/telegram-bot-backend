@@ -4,16 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start:index": "node index.js",
+    "start:server": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.2",
     "body-parser": "^1.20.2",
-    "dotenv": "^16.6.1",
-    "express": "^4.19.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.5.0",
     "fs-extra": "^11.2.0",
     "telegraf": "^4.16.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevOlayes/newcatssever.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DevOlayes/newcatssever/issues"
+  },
+  "homepage": "https://github.com/DevOlayes/newcatssever#readme"
 }
