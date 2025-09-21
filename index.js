@@ -81,7 +81,7 @@ bot.start(async (ctx) => {
         await ctx.replyWithPhoto(
             { source: 'public/like.jpg' },
             {
-                caption: `*Hey, ${userName}! Welcome to Taskoria!*\nHow strong is your SHIB army🪖?\nOnboard Your friends, relatives, holder's?\nYour All-in-One Earning Hub 🔥 Complete simple tasks, surveys, games, PTC ads, shortlinks, and offerwall.`,
+                caption: `*Hey, ${userName}! Welcome to Taskoria!,How strong is your SHIB army🪖?\nOnboard Your friends, relatives, holder's?\nYour All-in-One Earning Hub 🔥 Complete simple tasks, surveys, games, PTC ads, shortlinks, and offerwall.`,
                 parse_mode: 'Markdown',
                 reply_markup: {
                     inline_keyboard: [
