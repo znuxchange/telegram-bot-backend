@@ -68,7 +68,6 @@ app.post("/api/offerwall/postback", async (req, res) => {
     const userRef = db.collection("telegramUsers").doc(subId);
     await userRef.set(
       {
-        balance: admin.firestore.FieldValue.increment(rewardAmount),
         adsBalance: admin.firestore.FieldValue.increment(rewardAmount),
       },
       { merge: true }
